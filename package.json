@@ -1,0 +1,77 @@
+{
+  "name": "@axetroy/blog",
+  "version": "0.1.2",
+  "private": true,
+  "homepage": "http://www.axetroy.xyz",
+  "keywords": [
+    "axetroy",
+    "blog",
+    "serverless",
+    "github",
+    "todo",
+    "gist",
+    "open-source"
+  ],
+  "dependencies": {
+    "@axetroy/react-clipboard": "2.0.0",
+    "@axetroy/react-document-title": "2.0.0",
+    "@axetroy/react-download": "1.1.1",
+    "@axetroy/react-now": "1.0.0",
+    "@babel/polyfill": "7.4.4",
+    "@octokit/rest": "16.25.0",
+    "antd": "3.21.1",
+    "clipboard": "2.0.4",
+    "date-fns": "1.30.1",
+    "fastclick": "1.0.6",
+    "github-markdown-css": "3.0.1",
+    "localforage": "1.7.3",
+    "lodash.debounce": "4.0.8",
+    "lodash.isequal": "4.5.0",
+    "lodash.sortby": "4.7.0",
+    "normalize.css": "8.0.1",
+    "prop-types": "15.7.2",
+    "qrcode.react": "0.9.3",
+    "query-string": "6.8.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-image-lightbox": "5.1.0",
+    "react-lazyload": "2.6.2",
+    "react-octicon": "3.0.1",
+    "react-router-dom": "5.0.1",
+    "react-transition-group": "4.2.2",
+    "redux-zero": "5.0.5",
+    "redux-zero-logger": "0.1.1",
+    "redux-zero-persist": "0.2.6"
+  },
+  "devDependencies": {
+    "@axetroy/walk": "0.1.1",
+    "@types/prop-types": "15.7.1",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.8.5",
+    "babel-plugin-import": "1.12.0",
+    "cross-env": "5.2.0",
+    "customize-cra": "0.5.0",
+    "fs-extra": "8.1.0",
+    "gh-pages": "2.0.1",
+    "react-app-rewired": "2.1.3",
+    "react-scripts": "2.1.8"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "node scripts/now.js && react-app-rewired build && node scripts/domain.js",
+    "test": "react-app-rewired test",
+    "deploy": "node scripts/rm-map.js && gh-pages --repo https://github.com/axetroy/axetroy.github.io.git --branch master -d build",
+    "format": "prettier --write '{src,app}/**/*.{js,css,json,md}'",
+    "fix": "npx babel-cli ./node_modules/@octokit/rest --out-dir ./node_modules/@octokit/rest --copy-files --source-maps inline",
+    "postinstall": "npm run fix"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

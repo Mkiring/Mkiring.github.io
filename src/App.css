@@ -1,0 +1,261 @@
+@import "~antd/dist/antd.css";
+@import "~normalize.css";
+@import "~github-markdown-css";
+
+/*
+1rem = 10px
+*/
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  background-origin: initial;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* xs */
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+  body #nav ul {
+    max-width: 90%;
+  }
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+  body #nav ul {
+    max-width: 90%;
+  }
+}
+
+/* lg */
+@media (min-width: 1220px) and (max-width: 1599px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+/* xl */
+@media (min-width: 1600px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+#header .mega-octicon {
+  font-size: inherit;
+  min-width: 1.4rem;
+  margin-right: 0.8rem;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+}
+
+.edit-this-page-container {
+  position: relative;
+}
+
+.edit-this-page {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.5s;
+  transition-delay: 2s;
+  z-index: 999;
+}
+
+.toolbar-container:hover .edit-this-page {
+  padding: 0.5rem 0;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+/*framework*/
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mr5 {
+  margin-right: 0.5rem;
+}
+
+.font-size-2rem {
+  font-size: 2rem;
+}
+
+.markdown-body ul {
+  list-style: initial;
+}
+
+.markdown-body ol {
+  list-style: initial;
+}
+
+/*
+markdown style
+*/
+
+.markdown-body.post-content h1,
+.markdown-body.post-content h2,
+.markdown-body.post-content h3,
+.markdown-body.post-content h4,
+.markdown-body.post-content h5,
+.markdown-body.post-content h6 {
+  border-left: 0.5rem solid #64ceaa;
+  padding: 0.5rem 0 0.5rem 1.9rem;
+  background-color: #f5f5f5;
+}
+
+#nav {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+#nav ul {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 0;
+}
+
+#content {
+  padding-top: 58px;
+  padding-bottom: 20px;
+  background-image: url("./assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: 0% 0%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-clip: border-box;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.widget {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+  padding: 0 10px 20px 10px;
+  background: #fff;
+}
+
+.widget-header {
+  background: #f6f6f6;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.widget h3 {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.widget h3 a {
+  color: #303030;
+}
+
+.more {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.comment-box {
+  padding: 2rem 1rem;
+  border-top: 1px dashed #e6e6e6;
+}
+
+.mega-octicon,
+.middle {
+  vertical-align: middle;
+}
+
+/* animation for router */
+
+/* 路由进入 */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms linear, transform 500ms ease-in-out;
+}
+
+/* 路由退出 */
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 500ms linear, transform 500ms ease-in-out;
+}
